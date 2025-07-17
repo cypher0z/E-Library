@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Book</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📤 Upload a New Book</h1>
+        {% if error %}
+            <p style="color:red">{{ error }}</p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".pdf" required><br><br>
+            <button type="submit">Upload Book</button>
+        </form>
+        <br>
+        <a href="/">← Back to Library</a> | <a href="/logout">Logout</a>
+    </div>
+</body>
+</html>

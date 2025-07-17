@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>College E-Library</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📚 College E-Library</h1>
+
+        <!-- Login link belongs in the body -->
+        <p><a href="/login">🔐 Admin Login</a></p>
+
+        <p class="intro">Browse and open available textbooks below:</p>
+
+        <div class="book-grid">
+            {% for book in books %}
+                <div class="book-card">
+                    <div class="book-icon">📘</div>
+                    <div class="book-name">{{ book }}</div>
+                    <a class="open-btn" href="/book/{{ book }}" target="_blank">Open Book</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
