@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>College E-Library</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    </head>
+
+    <body>
+
+        <header id="Header">
+            <div class="container">
+                <nav class="topnav" role="navigation">
+                    <div class="level topnav">
+                        <div class="level-left">
+                            <a href="/">
+                                <img src="/photos/nitt.png" alt="Logo" class="logo">
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="navbar">
+            <div class="nav-left">
+                <a href="/"><strong>E-Library</strong></a>
+            </div>
+            <div class="profile-dropdown" id="profile-dropdown">
+                <img src="/photos/avatars/default.png" alt="Profile" class="profile-icon">
+                <div class="dropdown-content" id="profile-menu">
+                </div>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>E-Library</h1>
+            <p>Online library for students to access textbooks and learning material</p>
+            
+            <form action="/" method="GET" class="search-bar">
+                <input type="text" name="title" placeholder="Search by Title">
+                <input type="text" name="author" placeholder="Search by Author">
+                <input type="text" name="subject" placeholder="Search by Subject">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <div class="book-section">
+            <h2>Available Books</h2>
+            <div id="book-grid" class="book-grid">
+                <% if (bookData.length > 0) { %>
+                    <% bookData.forEach(book => { %>
+                        <a href="/books/<%= book._id %>" div class="book-card">
+                            <h3>
+                                <p class="book-title-link"><%= book.Title %></p>
+                            </h3>
+                            <p class="book-author">Author : <%= book.Author %></p>
+                            <p class="book-publisher">Publisher : <%= book.Publisher %></p>
+                        </a>
+                    <% }); %>
+                <% } else { %>
+                    <p>No books found.</p>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="pagination-container">
+            <div class="pagination-info">
+                Page <%= currentPage %> of <%= totalPages %>
+            </div>
+            <div class="pagination">
+                <% if (currentPage > 1) { %>
+                    <a href="/?page=1" class="pagination-arrow-btn">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                    <a href="/?page=<%= currentPage - 1 %>" class="pagination-arrow-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </a>
+                <% } %>
+                
+                <%
+                    let startPage = Math.max(1, currentPage - 4);
+                    let endPage = Math.min(totalPages, currentPage + 5);
+                %>
+        
+                <% if (endPage - startPage < 9) {
+                    startPage = Math.max(1, endPage - 9);
+                } %>
+                
+                <% for(let i = startPage; i <= endPage; i++) { %>
+                    <a href="/?page=<%= i %>" class="pagination-link <%= i === currentPage ? 'active' : '' %>">
+                        <%= i %>
+                    </a>
+                <% } %>
+        
+                <% if (currentPage < totalPages) { %>
+                    <a href="/?page=<%= currentPage + 1 %>" class="pagination-arrow-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <a href="/?page=<%= totalPages %>" class="pagination-arrow-btn">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                <% } %>
+            </div>
+        </div>
+        
+    </body>
+</html>

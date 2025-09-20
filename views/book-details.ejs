@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= book.Title %> - Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header id="Header">
+        <div class="container">
+            <nav class="topnav" role="navigation">
+                <div class="level topnav">
+                    <div class="level-left">
+                        <a href="/">
+                            <img src="/photos/nitt.png" alt="Logo" class="logo">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="navbar">
+        <div class="nav-left">
+            <a href="/"><strong>E-Library</strong></a>
+        </div>
+        <div class="profile-dropdown" id="profile-dropdown">
+            <img src="/photos/avatars/default.png" alt="Profile" class="profile-icon">
+            <div class="dropdown-content" id="profile-menu">
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>E-Library</h1>
+        <p>Online library for students to access textbooks and learning material</p>
+    </div>
+
+    <div class="book-details">
+        <h1><%= book.Title %></h1>
+        <p><strong>Author:</strong> <%= book.Author %></p>
+        <p><strong>Year:</strong> <%= book.Year %></p>
+        <p><strong>Publisher:</strong> <%= book.Publisher %></p>
+        <p><strong>Subject:</strong> <%= book.Subject %></p>
+        <p><strong>eISBN:</strong> <%= book.eISBN %></p>
+        <p><strong>URL:</strong> <a href="<%= book['URL'] %>" target="_blank"><%= book['URL'] %></a></p>
+    </div>
+
+</body>
+</html>

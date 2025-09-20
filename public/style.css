@@ -1,0 +1,246 @@
+/* General Page Setup */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    background-color: #111;
+    color: white;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Header Section */
+.header {
+    background-color: #2980b9;
+    color: white;
+    padding: 60px 20px 40px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin: 10px 0 25px;
+}
+
+.header a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Book Section */
+.book-section {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 20px;
+    border: 1px solid #ccc; /* A thin, light-gray border */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.book-card {
+    text-decoration: none; 
+    background-color: rgb(237, 235, 235);
+    border: 1px solid #ddd; /* A slightly darker border for the cards */
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s ease;
+    cursor:pointer;     
+    color: inherit;   
+}
+
+.book-details {
+  /* Set a fixed width */
+  margin: 50px 0;
+  width: 500px;
+
+  /* This is the key to horizontal centering */
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Other styling properties */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}   
+
+.book-details h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.book-details p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.book-details strong {
+  color: #000;
+}
+
+.book-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.book-details a:hover {
+  text-decoration: underline;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+#Header {
+    background-color: rgb(17, 4, 84);
+    width: 100%;
+    padding: 0; 
+    margin: 0;
+}
+
+#Header .logo {
+    display: block;
+    width: 100%; 
+    height: auto; 
+}
+
+#Header .container {
+    max-width: 100%; 
+    padding: 0;
+    margin: 0;
+}
+
+.profile-dropdown {
+    position: relative; 
+    display: inline-block;
+}
+
+.profile-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 10;
+}
+
+.dropdown-content a, .dropdown-content p {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Pagination Styling */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.pagination-info {
+    font-size: 1rem;
+    color: #555;
+    margin-right: 15px;
+}
+
+.pagination {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination-link,
+.pagination-arrow-btn {
+    text-decoration: none;
+    color: #333;
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.pagination-link:hover,
+.pagination-arrow-btn:hover {
+    background-color: #ddd;
+}
+
+.pagination-link.active {
+    background-color: #2980b9; /* A dark blue similar to the image */
+    color: white;
+    cursor: default;
+}
+
+.pagination-arrow-btn {
+    background-color: #555;
+    color: white;
+}
+
+.pagination-arrow-btn:hover {
+    background-color: #444;
+}
